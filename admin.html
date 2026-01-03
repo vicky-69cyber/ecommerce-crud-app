@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Store - Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🛍️ E-Store</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        Cart
+                        <span id="cart-badge" style="display: none;">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="admin-header">
+            <h1 class="page-title">Admin Panel</h1>
+            <button class="btn btn-primary" id="add-product-btn">Add New Product</button>
+        </div>
+
+        <!-- Products List -->
+        <section class="admin-products-list" id="admin-products-list">
+            <!-- Products will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <!-- Modal for Add/Edit Product Form -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Add New Product</h2>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <form id="product-form">
+                <input type="hidden" id="product-id" value="">
+                
+                <div class="form-group">
+                    <label for="product-name">Product Name *</label>
+                    <input 
+                        type="text" 
+                        id="product-name" 
+                        required
+                        placeholder="Enter product name"
+                    >
+                    <span class="error-message" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Price ($) *</label>
+                    <input 
+                        type="number" 
+                        id="product-price" 
+                        step="0.01" 
+                        min="0" 
+                        required
+                        placeholder="0.00"
+                    >
+                    <span class="error-message" id="price-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-category">Category *</label>
+                    <select id="product-category" required>
+                        <option value="">Select a category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Books">Books</option>
+                        <option value="Home & Garden">Home & Garden</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Toys">Toys</option>
+                    </select>
+                    <span class="error-message" id="category-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-image">Image URL *</label>
+                    <input 
+                        type="url" 
+                        id="product-image" 
+                        required
+                        placeholder="https://example.com/image.jpg"
+                    >
+                    <span class="error-message" id="image-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-description">Description</label>
+                    <textarea 
+                        id="product-description" 
+                        placeholder="Enter product description (optional)"
+                    ></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn" id="cancel-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="save-btn">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
+

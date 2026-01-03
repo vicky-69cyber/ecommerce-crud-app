@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Store - Products</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🛍️ E-Store</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        Cart
+                        <span id="cart-badge" style="display: none;">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">Our Products</h1>
+
+        <!-- Search and Filter Section -->
+        <section class="search-filter-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search products by name..."
+                >
+            </div>
+            <div class="category-filter">
+                <select id="category-filter">
+                    <option value="All">All Categories</option>
+                    <!-- Categories will be populated by JavaScript -->
+                </select>
+            </div>
+            <button class="clear-filters-btn" id="clear-filters">Clear Filters</button>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-grid" id="products-grid">
+            <!-- Products will be dynamically inserted here by JavaScript -->
+        </section>
+
+        <!-- Empty State Message -->
+        <div class="no-products" id="no-products" style="display: none;">
+            <p>No products found. Try adjusting your search or filters.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <!-- Products module must be loaded first -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
